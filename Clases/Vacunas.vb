@@ -14,6 +14,10 @@
         destino = dest
     End Sub
 
+    Public Sub IncrementarInventario(cant As Integer) Implements IProducto.IncrementarInventario
+        Dim nuevoNivelDeInventario = Me.cant + cant
+        Me.cant = nuevoNivelDeInventario
+    End Sub
     Public Sub SetSecuencia(sec As String) Implements IProducto.SetNombre
         secuencia = sec
     End Sub
@@ -25,7 +29,7 @@
     Public Function GetSecuencia() As String Implements IProducto.GetNombre
         Return secuencia
     End Function
-    Public Function NivelDeInventario() As Integer Implements IProducto.Inventario(Of)
+    Public Function NivelDeInventario() As Integer Implements IProducto.Inventario
         Return cant
     End Function
 End Class
