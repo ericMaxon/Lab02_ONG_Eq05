@@ -1,7 +1,7 @@
 ﻿Public Class Vacunas
     Implements IProducto
     Private destino As String
-    Private secuencia As String
+    Private secuencia As String ' Cambiar este atributo
     Private cant As Integer
 
     Public Sub New(secuencia As String, cant As Integer)
