@@ -38,4 +38,11 @@
     Public Function GetUbicacion() As String Implements IInventario.GetUbicacion
         Return ubicacion
     End Function
+    Public Function DisponibilidadTotal() As Integer
+        Dim disponible As Integer
+        inventario.ForEach(Sub(vacuna)
+                               disponible += vacuna.NivelDeInventario()
+                           End Sub)
+        Return disponible
+    End Function
 End Class
