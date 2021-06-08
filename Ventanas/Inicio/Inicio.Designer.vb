@@ -22,24 +22,27 @@ Partial Class Inicio
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnLocalidad = New System.Windows.Forms.ComboBox()
+        Me.cbxLocalidad = New System.Windows.Forms.ComboBox()
         Me.lblSecuencia = New System.Windows.Forms.Label()
         Me.lblQty = New System.Windows.Forms.Label()
         Me.tbxQty = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnSend = New System.Windows.Forms.Button()
+        Me.btnOrders = New System.Windows.Forms.Button()
         Me.lblStart = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbxName = New System.Windows.Forms.ComboBox()
+        Me.lblUbi = New System.Windows.Forms.Label()
+        Me.btnFinish = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'btnLocalidad
+        'cbxLocalidad
         '
-        Me.btnLocalidad.FormattingEnabled = True
-        Me.btnLocalidad.Location = New System.Drawing.Point(142, 140)
-        Me.btnLocalidad.Name = "btnLocalidad"
-        Me.btnLocalidad.Size = New System.Drawing.Size(144, 23)
-        Me.btnLocalidad.TabIndex = 0
-        Me.btnLocalidad.Text = "Lugar del almacen"
+        Me.cbxLocalidad.FormattingEnabled = True
+        Me.cbxLocalidad.Items.AddRange(New Object() {"Panama", "Colon", "Veraguas", "Darien"})
+        Me.cbxLocalidad.Location = New System.Drawing.Point(142, 140)
+        Me.cbxLocalidad.Name = "cbxLocalidad"
+        Me.cbxLocalidad.Size = New System.Drawing.Size(144, 23)
+        Me.cbxLocalidad.TabIndex = 0
+        Me.cbxLocalidad.Text = "Lugar del almacen"
         '
         'lblSecuencia
         '
@@ -53,7 +56,7 @@ Partial Class Inicio
         'lblQty
         '
         Me.lblQty.AutoSize = True
-        Me.lblQty.Location = New System.Drawing.Point(266, 73)
+        Me.lblQty.Location = New System.Drawing.Point(272, 73)
         Me.lblQty.Name = "lblQty"
         Me.lblQty.Size = New System.Drawing.Size(55, 15)
         Me.lblQty.TabIndex = 3
@@ -61,45 +64,68 @@ Partial Class Inicio
         '
         'tbxQty
         '
-        Me.tbxQty.Location = New System.Drawing.Point(240, 90)
+        Me.tbxQty.Location = New System.Drawing.Point(250, 91)
         Me.tbxQty.Name = "tbxQty"
         Me.tbxQty.Size = New System.Drawing.Size(100, 23)
         Me.tbxQty.TabIndex = 4
         '
-        'Button1
+        'btnSend
         '
-        Me.Button1.Location = New System.Drawing.Point(178, 204)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnSend.AutoSize = True
+        Me.btnSend.Location = New System.Drawing.Point(158, 187)
+        Me.btnSend.Name = "btnSend"
+        Me.btnSend.Size = New System.Drawing.Size(117, 25)
+        Me.btnSend.TabIndex = 6
+        Me.btnSend.Text = "Enviar al inventario"
+        Me.btnSend.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnOrders
         '
-        Me.Button2.Location = New System.Drawing.Point(178, 247)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 7
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnOrders.AutoSize = True
+        Me.btnOrders.Location = New System.Drawing.Point(169, 236)
+        Me.btnOrders.Name = "btnOrders"
+        Me.btnOrders.Size = New System.Drawing.Size(93, 25)
+        Me.btnOrders.TabIndex = 7
+        Me.btnOrders.Text = "Iniciar Jornada"
+        Me.btnOrders.UseVisualStyleBackColor = True
+        Me.btnOrders.Visible = False
         '
         'lblStart
         '
         Me.lblStart.AutoSize = True
-        Me.lblStart.Location = New System.Drawing.Point(158, 31)
+        Me.lblStart.Location = New System.Drawing.Point(158, 9)
         Me.lblStart.Name = "lblStart"
         Me.lblStart.Size = New System.Drawing.Size(95, 15)
         Me.lblStart.TabIndex = 9
         Me.lblStart.Text = "Inicio de jornada"
         '
-        'ComboBox1
+        'cbxName
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(51, 91)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 23)
-        Me.ComboBox1.TabIndex = 10
+        Me.cbxName.FormattingEnabled = True
+        Me.cbxName.Items.AddRange(New Object() {"Oxford", "BioNTech", "CoronaVac", "Sputnik V"})
+        Me.cbxName.Location = New System.Drawing.Point(51, 91)
+        Me.cbxName.Name = "cbxName"
+        Me.cbxName.Size = New System.Drawing.Size(121, 23)
+        Me.cbxName.TabIndex = 10
+        Me.cbxName.Text = "Vacuna"
+        '
+        'lblUbi
+        '
+        Me.lblUbi.AutoSize = True
+        Me.lblUbi.Location = New System.Drawing.Point(178, 122)
+        Me.lblUbi.Name = "lblUbi"
+        Me.lblUbi.Size = New System.Drawing.Size(58, 15)
+        Me.lblUbi.TabIndex = 11
+        Me.lblUbi.Text = "Localidad"
+        '
+        'btnFinish
+        '
+        Me.btnFinish.Location = New System.Drawing.Point(376, 312)
+        Me.btnFinish.Name = "btnFinish"
+        Me.btnFinish.Size = New System.Drawing.Size(75, 23)
+        Me.btnFinish.TabIndex = 12
+        Me.btnFinish.Text = "Finalizar"
+        Me.btnFinish.UseVisualStyleBackColor = True
         '
         'Inicio
         '
@@ -107,14 +133,16 @@ Partial Class Inicio
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(463, 347)
         Me.ControlBox = False
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.btnFinish)
+        Me.Controls.Add(Me.lblUbi)
+        Me.Controls.Add(Me.cbxName)
         Me.Controls.Add(Me.lblStart)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnOrders)
+        Me.Controls.Add(Me.btnSend)
         Me.Controls.Add(Me.tbxQty)
         Me.Controls.Add(Me.lblQty)
         Me.Controls.Add(Me.lblSecuencia)
-        Me.Controls.Add(Me.btnLocalidad)
+        Me.Controls.Add(Me.cbxLocalidad)
         Me.Name = "Inicio"
         Me.Text = "Inicio"
         Me.ResumeLayout(False)
@@ -122,12 +150,14 @@ Partial Class Inicio
 
     End Sub
 
-    Friend WithEvents btnLocalidad As ComboBox
+    Friend WithEvents cbxLocalidad As ComboBox
     Friend WithEvents lblSecuencia As Label
     Friend WithEvents lblQty As Label
     Friend WithEvents tbxQty As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnSend As Button
+    Friend WithEvents btnOrders As Button
     Friend WithEvents lblStart As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cbxName As ComboBox
+    Friend WithEvents lblUbi As Label
+    Friend WithEvents btnFinish As Button
 End Class
