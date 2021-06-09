@@ -25,13 +25,14 @@ Partial Class Solicitudes
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Solicitudes))
         Me.cboxUbiFilter = New System.Windows.Forms.ComboBox()
         Me.dgvTablero = New System.Windows.Forms.DataGridView()
-        Me.lblFilter = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.clmNmSc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clmSecuencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clmQty = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clmUbi = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clmStatus = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.clmComment = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lblFilter = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.dgvTablero, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -48,7 +49,7 @@ Partial Class Solicitudes
         'dgvTablero
         '
         Me.dgvTablero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTablero.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clmSecuencia, Me.clmQty, Me.clmUbi, Me.clmStatus, Me.clmComment})
+        Me.dgvTablero.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clmNmSc, Me.clmSecuencia, Me.clmQty, Me.clmUbi, Me.clmStatus, Me.clmComment})
         Me.dgvTablero.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgvTablero.Location = New System.Drawing.Point(33, 82)
         Me.dgvTablero.MultiSelect = False
@@ -59,23 +60,11 @@ Partial Class Solicitudes
         Me.dgvTablero.Size = New System.Drawing.Size(702, 346)
         Me.dgvTablero.TabIndex = 1
         '
-        'lblFilter
+        'clmNmSc
         '
-        Me.lblFilter.AutoSize = True
-        Me.lblFilter.Location = New System.Drawing.Point(62, 15)
-        Me.lblFilter.Name = "lblFilter"
-        Me.lblFilter.Size = New System.Drawing.Size(39, 15)
-        Me.lblFilter.TabIndex = 2
-        Me.lblFilter.Text = "Filtros"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(234, 12)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 23)
-        Me.ComboBox1.TabIndex = 3
-        Me.ComboBox1.Text = "Estados"
+        Me.clmNmSc.HeaderText = "Nro. Secuencia"
+        Me.clmNmSc.Name = "clmNmSc"
+        Me.clmNmSc.ReadOnly = True
         '
         'clmSecuencia
         '
@@ -107,6 +96,24 @@ Partial Class Solicitudes
         Me.clmComment.HeaderText = "Motivo"
         Me.clmComment.Name = "clmComment"
         Me.clmComment.ReadOnly = True
+        '
+        'lblFilter
+        '
+        Me.lblFilter.AutoSize = True
+        Me.lblFilter.Location = New System.Drawing.Point(62, 15)
+        Me.lblFilter.Name = "lblFilter"
+        Me.lblFilter.Size = New System.Drawing.Size(39, 15)
+        Me.lblFilter.TabIndex = 2
+        Me.lblFilter.Text = "Filtros"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(234, 12)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 23)
+        Me.ComboBox1.TabIndex = 3
+        Me.ComboBox1.Text = "Estados"
         '
         'Button1
         '
@@ -143,10 +150,11 @@ Partial Class Solicitudes
     Friend WithEvents dgvTablero As DataGridView
     Friend WithEvents lblFilter As Label
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents clmNmSc As DataGridViewTextBoxColumn
     Friend WithEvents clmSecuencia As DataGridViewTextBoxColumn
     Friend WithEvents clmQty As DataGridViewTextBoxColumn
     Friend WithEvents clmUbi As DataGridViewTextBoxColumn
     Friend WithEvents clmStatus As DataGridViewComboBoxColumn
     Friend WithEvents clmComment As DataGridViewTextBoxColumn
-    Friend WithEvents Button1 As Button
 End Class

@@ -13,12 +13,12 @@
     Private Sub InsertarAlInventario(vacuna As Vacunas) Implements IInventario.InsertarAlInventario
         inventario.Add(vacuna)
     End Sub
-    Private Sub EliminarDelInventario(vacuna As Vacunas) Implements IInventario.EliminarDelInventario
+    Public Sub EliminarDelInventario(vacuna As Vacunas) Implements IInventario.EliminarDelInventario
         inventario.Remove(vacuna)
     End Sub
-    Private Sub ActulizarElemento(antiguoEstado As Vacunas, nuevoEstado As Vacunas) Implements IInventario.ActualizarElemento
-        EliminarDelInventario(antiguoEstado)' Eliminando el estado anterior de la vacuna
-        InsertarAlInventario(nuevoEstado)' Insertando el nuevo estado actulizada de la vacuna
+    Public Sub ActulizarElemento(antiguoEstado As Vacunas, nuevoEstado As Vacunas) Implements IInventario.ActualizarElemento
+        EliminarDelInventario(antiguoEstado) ' Eliminando el estado anterior de la vacuna
+        InsertarAlInventario(nuevoEstado) ' Insertando el nuevo estado actulizada de la vacuna
     End Sub
     ' Funciones principales del almacen
     Public Sub InsertarVacuna(secuencia As String, cant As Integer) Implements IInventario.InsertarProducto

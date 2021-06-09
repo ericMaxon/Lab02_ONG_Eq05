@@ -20,7 +20,6 @@
                     Dim productName As String = cbxName.SelectedItem.ToString()
                     Dim localidad As String = cbxLocalidad.SelectedItem.ToString()
 
-
                     Dim existeElAlmacen As Almacen = almacenes.Find(Function(almacen) almacen.GetUbicacion() = localidad)
                     If Not IsNothing(existeElAlmacen) Then
                         Dim existeIndex As Integer = almacenes.IndexOf(existeElAlmacen)
@@ -30,9 +29,7 @@
                         almacenes.Add(New Almacen(localidad))
                         almacenes.Last().InsertarVacuna(productName, cant)
                     End If
-                    almacenes.ForEach(Sub(almacen)
-                                          dispInicial += almacen.DisponibilidadTotal()
-                                      End Sub)
+                    dispInicial = Me.Totalidad()
                     If (dispInicial >= CANT_INICIAL) Then
                         btnOrders.Visible = True
                     End If
@@ -84,5 +81,12 @@
     End Function
     Public Function ObtnenerDisponibilidadInicial() As Integer
         Return dispInicial
+    End Function
+    Private Function Totalidad() As Integer
+        Dim total As Integer
+        almacenes.ForEach(Sub(almacen)
+                              total += almacen.DisponibilidadTotal()
+                          End Sub)
+        Return total
     End Function
 End Class
