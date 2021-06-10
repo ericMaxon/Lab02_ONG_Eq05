@@ -18,6 +18,10 @@
         Dim nuevoNivelDeInventario = Me.cant + cant
         Me.cant = nuevoNivelDeInventario
     End Sub
+    Public Sub DisminuirInventario(cant As Integer) Implements IProducto.DisminuirInventario
+        Dim nuevoNivelDeInventario = Me.cant - cant
+        Me.cant = nuevoNivelDeInventario
+    End Sub
     Public Sub SetSecuencia(sec As String) Implements IProducto.SetNombre
         secuencia = sec
     End Sub
