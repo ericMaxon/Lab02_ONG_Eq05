@@ -1,19 +1,18 @@
 ﻿Public Class Solicitud
-    Private nmSec As Integer
     Private nombre As String
     Private cant As Integer
     Private ubi As String
     Private estado As String
     Private motivo As String
 
-    Public Property nmSecProp As Integer
-        Get
-            Return nmSec
-        End Get
-        Set(value As Integer)
-            nmSec = value
-        End Set
-    End Property
+    Public Sub New(nombre As String, cant As String, ubi As String, estado As String, motivo As String)
+        Me.nombre = nombre
+        Me.cant = cant
+        Me.ubi = ubi
+        Me.estado = estado
+        Me.motivo = motivo
+    End Sub
+
     Public Property nombreProp As String
         Get
             Return nombre

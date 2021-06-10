@@ -22,6 +22,7 @@ Partial Class Inicio
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inicio))
         Me.cbxLocalidad = New System.Windows.Forms.ComboBox()
         Me.lblSecuencia = New System.Windows.Forms.Label()
         Me.lblQty = New System.Windows.Forms.Label()
@@ -32,12 +33,13 @@ Partial Class Inicio
         Me.cbxName = New System.Windows.Forms.ComboBox()
         Me.lblUbi = New System.Windows.Forms.Label()
         Me.btnFinish = New System.Windows.Forms.Button()
+        Me.lblPc = New System.Windows.Forms.Label()
+        Me.lblUser = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'cbxLocalidad
         '
         Me.cbxLocalidad.FormattingEnabled = True
-        Me.cbxLocalidad.Items.AddRange(New Object() {"Panama", "Colon", "Veraguas", "Darien"})
         Me.cbxLocalidad.Location = New System.Drawing.Point(142, 140)
         Me.cbxLocalidad.Name = "cbxLocalidad"
         Me.cbxLocalidad.Size = New System.Drawing.Size(144, 23)
@@ -72,21 +74,31 @@ Partial Class Inicio
         'btnSend
         '
         Me.btnSend.AutoSize = True
-        Me.btnSend.Location = New System.Drawing.Point(158, 187)
+        Me.btnSend.FlatAppearance.BorderSize = 0
+        Me.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSend.Image = CType(resources.GetObject("btnSend.Image"), System.Drawing.Image)
+        Me.btnSend.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnSend.Location = New System.Drawing.Point(142, 176)
         Me.btnSend.Name = "btnSend"
-        Me.btnSend.Size = New System.Drawing.Size(117, 25)
+        Me.btnSend.Size = New System.Drawing.Size(121, 54)
         Me.btnSend.TabIndex = 6
         Me.btnSend.Text = "Enviar al inventario"
+        Me.btnSend.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSend.UseVisualStyleBackColor = True
         '
         'btnOrders
         '
         Me.btnOrders.AutoSize = True
-        Me.btnOrders.Location = New System.Drawing.Point(169, 236)
+        Me.btnOrders.FlatAppearance.BorderSize = 0
+        Me.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOrders.Image = CType(resources.GetObject("btnOrders.Image"), System.Drawing.Image)
+        Me.btnOrders.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnOrders.Location = New System.Drawing.Point(212, 176)
         Me.btnOrders.Name = "btnOrders"
-        Me.btnOrders.Size = New System.Drawing.Size(93, 25)
+        Me.btnOrders.Size = New System.Drawing.Size(106, 54)
         Me.btnOrders.TabIndex = 7
         Me.btnOrders.Text = "Iniciar Jornada"
+        Me.btnOrders.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnOrders.UseVisualStyleBackColor = True
         Me.btnOrders.Visible = False
         '
@@ -102,7 +114,6 @@ Partial Class Inicio
         'cbxName
         '
         Me.cbxName.FormattingEnabled = True
-        Me.cbxName.Items.AddRange(New Object() {"Oxford", "BioNTech", "CoronaVac", "Sputnik V"})
         Me.cbxName.Location = New System.Drawing.Point(51, 91)
         Me.cbxName.Name = "cbxName"
         Me.cbxName.Size = New System.Drawing.Size(121, 23)
@@ -120,12 +131,35 @@ Partial Class Inicio
         '
         'btnFinish
         '
-        Me.btnFinish.Location = New System.Drawing.Point(376, 312)
+        Me.btnFinish.FlatAppearance.BorderSize = 0
+        Me.btnFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFinish.Image = CType(resources.GetObject("btnFinish.Image"), System.Drawing.Image)
+        Me.btnFinish.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnFinish.Location = New System.Drawing.Point(365, 293)
         Me.btnFinish.Name = "btnFinish"
-        Me.btnFinish.Size = New System.Drawing.Size(75, 23)
+        Me.btnFinish.Size = New System.Drawing.Size(86, 42)
         Me.btnFinish.TabIndex = 12
         Me.btnFinish.Text = "Finalizar"
+        Me.btnFinish.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnFinish.UseVisualStyleBackColor = True
+        '
+        'lblPc
+        '
+        Me.lblPc.AutoSize = True
+        Me.lblPc.Location = New System.Drawing.Point(0, 319)
+        Me.lblPc.Name = "lblPc"
+        Me.lblPc.Size = New System.Drawing.Size(41, 15)
+        Me.lblPc.TabIndex = 13
+        Me.lblPc.Text = "Label1"
+        '
+        'lblUser
+        '
+        Me.lblUser.AutoSize = True
+        Me.lblUser.Location = New System.Drawing.Point(0, 334)
+        Me.lblUser.Name = "lblUser"
+        Me.lblUser.Size = New System.Drawing.Size(41, 15)
+        Me.lblUser.TabIndex = 14
+        Me.lblUser.Text = "Label2"
         '
         'Inicio
         '
@@ -133,6 +167,8 @@ Partial Class Inicio
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(463, 347)
         Me.ControlBox = False
+        Me.Controls.Add(Me.lblUser)
+        Me.Controls.Add(Me.lblPc)
         Me.Controls.Add(Me.btnFinish)
         Me.Controls.Add(Me.lblUbi)
         Me.Controls.Add(Me.cbxName)
@@ -160,4 +196,6 @@ Partial Class Inicio
     Friend WithEvents cbxName As ComboBox
     Friend WithEvents lblUbi As Label
     Friend WithEvents btnFinish As Button
+    Friend WithEvents lblPc As Label
+    Friend WithEvents lblUser As Label
 End Class

@@ -22,16 +22,17 @@ Partial Class Pedidos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pedidos))
         Me.lblRequest = New System.Windows.Forms.Label()
         Me.lblUbi = New System.Windows.Forms.Label()
         Me.cbxName = New System.Windows.Forms.ComboBox()
-        Me.btnGotoOrders = New System.Windows.Forms.Button()
         Me.btnAddOrder = New System.Windows.Forms.Button()
         Me.tbxQty = New System.Windows.Forms.TextBox()
         Me.lblQty = New System.Windows.Forms.Label()
         Me.lblSecuencia = New System.Windows.Forms.Label()
         Me.cbxLocalidad = New System.Windows.Forms.ComboBox()
         Me.btnFinish = New System.Windows.Forms.Button()
+        Me.btnGotoOrders = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblRequest
@@ -55,32 +56,25 @@ Partial Class Pedidos
         'cbxName
         '
         Me.cbxName.FormattingEnabled = True
-        Me.cbxName.Items.AddRange(New Object() {"Oxford", "BioNTech", "CoronaVac", "Sputnik V"})
         Me.cbxName.Location = New System.Drawing.Point(73, 104)
         Me.cbxName.Name = "cbxName"
         Me.cbxName.Size = New System.Drawing.Size(121, 23)
         Me.cbxName.TabIndex = 24
         Me.cbxName.Text = "Vacuna"
         '
-        'btnGotoOrders
-        '
-        Me.btnGotoOrders.AutoSize = True
-        Me.btnGotoOrders.Location = New System.Drawing.Point(446, 12)
-        Me.btnGotoOrders.Name = "btnGotoOrders"
-        Me.btnGotoOrders.Size = New System.Drawing.Size(93, 25)
-        Me.btnGotoOrders.TabIndex = 23
-        Me.btnGotoOrders.Text = "Ver pedidos"
-        Me.btnGotoOrders.UseVisualStyleBackColor = True
-        Me.btnGotoOrders.Visible = False
-        '
         'btnAddOrder
         '
         Me.btnAddOrder.AutoSize = True
-        Me.btnAddOrder.Location = New System.Drawing.Point(180, 200)
+        Me.btnAddOrder.FlatAppearance.BorderSize = 0
+        Me.btnAddOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddOrder.Image = CType(resources.GetObject("btnAddOrder.Image"), System.Drawing.Image)
+        Me.btnAddOrder.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnAddOrder.Location = New System.Drawing.Point(178, 191)
         Me.btnAddOrder.Name = "btnAddOrder"
-        Me.btnAddOrder.Size = New System.Drawing.Size(117, 25)
+        Me.btnAddOrder.Size = New System.Drawing.Size(117, 58)
         Me.btnAddOrder.TabIndex = 22
         Me.btnAddOrder.Text = "Realizar pedido"
+        Me.btnAddOrder.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnAddOrder.UseVisualStyleBackColor = True
         '
         'tbxQty
@@ -111,7 +105,6 @@ Partial Class Pedidos
         'cbxLocalidad
         '
         Me.cbxLocalidad.FormattingEnabled = True
-        Me.cbxLocalidad.Items.AddRange(New Object() {"Panama", "Colon", "Veraguas", "Darien"})
         Me.cbxLocalidad.Location = New System.Drawing.Point(164, 153)
         Me.cbxLocalidad.Name = "cbxLocalidad"
         Me.cbxLocalidad.Size = New System.Drawing.Size(144, 23)
@@ -120,18 +113,42 @@ Partial Class Pedidos
         '
         'btnFinish
         '
-        Me.btnFinish.Location = New System.Drawing.Point(464, 346)
+        Me.btnFinish.AutoSize = True
+        Me.btnFinish.FlatAppearance.BorderSize = 0
+        Me.btnFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFinish.Image = CType(resources.GetObject("btnFinish.Image"), System.Drawing.Image)
+        Me.btnFinish.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnFinish.Location = New System.Drawing.Point(395, 325)
         Me.btnFinish.Name = "btnFinish"
-        Me.btnFinish.Size = New System.Drawing.Size(75, 23)
+        Me.btnFinish.Size = New System.Drawing.Size(68, 44)
         Me.btnFinish.TabIndex = 26
         Me.btnFinish.Text = "Finalizar"
+        Me.btnFinish.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnFinish.UseVisualStyleBackColor = True
+        '
+        'btnGotoOrders
+        '
+        Me.btnGotoOrders.AutoSize = True
+        Me.btnGotoOrders.BackColor = System.Drawing.Color.Transparent
+        Me.btnGotoOrders.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnGotoOrders.FlatAppearance.BorderSize = 0
+        Me.btnGotoOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGotoOrders.Image = CType(resources.GetObject("btnGotoOrders.Image"), System.Drawing.Image)
+        Me.btnGotoOrders.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnGotoOrders.Location = New System.Drawing.Point(271, 191)
+        Me.btnGotoOrders.Name = "btnGotoOrders"
+        Me.btnGotoOrders.Size = New System.Drawing.Size(78, 58)
+        Me.btnGotoOrders.TabIndex = 23
+        Me.btnGotoOrders.Text = "Ver pedidos"
+        Me.btnGotoOrders.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnGotoOrders.UseVisualStyleBackColor = False
+        Me.btnGotoOrders.Visible = False
         '
         'Pedidos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(551, 381)
+        Me.ClientSize = New System.Drawing.Size(472, 380)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnFinish)
         Me.Controls.Add(Me.lblUbi)
@@ -152,11 +169,11 @@ Partial Class Pedidos
     Friend WithEvents lblRequest As Label
     Friend WithEvents lblUbi As Label
     Friend WithEvents cbxName As ComboBox
-    Friend WithEvents btnGotoOrders As Button
     Friend WithEvents btnAddOrder As Button
     Friend WithEvents tbxQty As TextBox
     Friend WithEvents lblQty As Label
     Friend WithEvents lblSecuencia As Label
     Friend WithEvents cbxLocalidad As ComboBox
     Friend WithEvents btnFinish As Button
+    Friend WithEvents btnGotoOrders As Button
 End Class
